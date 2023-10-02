@@ -29,5 +29,5 @@ This GitHub repository hosts the source code for a versatile Discord bot that co
 
 Feel free to contribute, report issues, or suggest enhancements to make this Discord bot even more impressive!
 
----
+
 
