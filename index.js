@@ -5,7 +5,6 @@ const axios = require('axios');
 // index.js (CommonJS)
 const darkModule = require('./dark.js');
 
-
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -84,13 +83,13 @@ client.on('ready', async () => {
 
 client.on('messageCreate', async message => {
   if (message.author.bot) return;
-  
+
   // Check if the bot was mentioned in the message
   const botMention = message.mentions.users.has(client.user.id);
 
   if (botMention) {
     // Handle the bot mention and send a reply here
-    const replyProbability = 0.5; // Adjust the probability here (e.g., 0.5 for 50% chance of replying)
+    const replyProbability = 0.1; // Adjust the probability here (e.g., 0.5 for 50% chance of replying)
 
     if (Math.random() < replyProbability) {
       const randomResponseIndex = Math.floor(Math.random() * 4); // Generate a random number between 0 and 3
@@ -113,16 +112,28 @@ client.on('messageCreate', async message => {
       message.reply(response);
     }
   }
+  // Check for the !say command
+  if (message.content.startsWith(`${prefix}say`)) {
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const commandName = args.shift().toLowerCase();
+
+    if (commandName === 'say') {
+      const messageToRepeat = args.join(' ');
+      message.channel.send(messageToRepeat);
+    }
+  }
 });
 
 
 
 
 
-client.login(''); // Replace with your actual bot token
+
+
+client.login('MTE0NDkzNTAyNDgxMTA2MTI5OA.G2prHF.EuRDVnRQGt30F-IkAyJYqwtW16gttibRf2XX_Q'); // Replace with your actual bot token
 const config = {
-  api_token: "", // Replace this with your API token.
-  bot_token: "", // Replace this with your bot token.
+  api_token: "MTA5MTc3OTc0NDU2MDYxOTUy.Ptw3SV.4LTLr1W79M0lyJaAeppVt5dnqud", // Replace this with your API token.
+  bot_token: "MTE0NDkzNTAyNDgxMTA2MTI5OA.G2prHF.EuRDVnRQGt30F-IkAyJYqwtW16gttibRf2XX_Q", // Replace this with your bot token.
 };
 
 const smartestchatbot = require("smartestchatbot");
