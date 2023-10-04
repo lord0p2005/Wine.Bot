@@ -130,10 +130,10 @@ client.on('messageCreate', async message => {
 
 
 
-client.login('MTE0NDkzNTAyNDgxMTA2MTI5OA.G2prHF.EuRDVnRQGt30F-IkAyJYqwtW16gttibRf2XX_Q'); // Replace with your actual bot token
+client.login(''); // Replace with your actual bot token
 const config = {
-  api_token: "MTA5MTc3OTc0NDU2MDYxOTUy.Ptw3SV.4LTLr1W79M0lyJaAeppVt5dnqud", // Replace this with your API token.
-  bot_token: "MTE0NDkzNTAyNDgxMTA2MTI5OA.G2prHF.EuRDVnRQGt30F-IkAyJYqwtW16gttibRf2XX_Q", // Replace this with your bot token.
+  api_token: "", // Replace this with your API token.
+  bot_token: "", // Replace this with your bot token.
 };
 
 const smartestchatbot = require("smartestchatbot");
